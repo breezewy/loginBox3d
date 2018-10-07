@@ -1,0 +1,103 @@
+  html,body{
+            height:100%; 
+            font:14px/1.2 "Arial";
+            color:#000;
+        }
+        header {
+            position: absolute;
+            top:10px;
+            width:100%;
+        }
+        header .user-circle{
+            float:right;
+            margin-right:20px;
+            font-size: 28px;
+            color:#000;
+        }
+        main {
+            height:100%;
+            background:linear-gradient(to right ,rgba(211,211,211,0.1),rgba(169,169,169,0.1)),url(../img/1.jpg) center center no-repeat;
+        }
+        .filp-modal {
+           display: none;
+        }
+        .modal {
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%) ;
+            background:rgba(255, 255, 255,0.5);
+            width:400px;
+            /* height:300px; */
+            padding:16px;
+            box-shadow: 2px 2px 4px #1b4261;
+        }
+        .modal .close {
+            position: absolute;
+            top:5px;
+            right:10px;
+            font-size: 18px;
+        }
+        .modal .tabs {
+            text-align: center;
+            font-size: 16px;
+        }
+        .tabs a {
+            display: inline-block;
+            margin:0 15px;
+        }
+        .tabs a.active {
+            border-bottom:2px solid ;
+            padding:2px;
+        }
+        .modal .content {
+            padding:20px 40px;
+        }
+        .modal .errorMes {
+            color:red;
+            font-size: 12px;
+        }
+        .content .input-field {
+            margin-top:15px;
+            position: relative;
+        }
+        .content input[type=text],
+        .content input[type=password]{
+            height:36px;
+            width:100%;
+            padding:0px 25px;
+            outline:none;
+            border:none;
+        }
+        .input-field .fa {
+            position: absolute;
+            left:8px;
+            top:11px;
+        }
+        .content input[type=submit]{
+            /* 解决input type="button" 不能设置高度的问题 */
+            appearance:button;
+            -moz-appearance:button; /* Firefox */
+            -webkit-appearance:button; /* Safari 和 Chrome */
+            width:50px;
+            height:30px;
+            cursor: pointer;
+            border:none;
+            outline: none;
+            box-shadow: 0px 0px 2px rgba(0,0,0,0.4);
+        }
+
+        /* 登录注册框切换 */
+        .filp-modal.login .modal-login,
+        .filp-modal.register .modal-register {
+            transform: translate(-50%,-50%) rotateY(0deg);
+            backface-visibility: hidden;
+            transition: all 1s;
+        }
+        /* 登录注册框切换 */
+        .filp-modal.login .modal-register,
+        .filp-modal.register .modal-login {
+            transform: translate(-50%,-50%) rotateY(180deg);
+            backface-visibility: hidden;
+            transition: all 1s;
+        }
