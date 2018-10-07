@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3d登录框</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        html,body{
+            height:100%; 
+            font:14px/1.2 "Arial";
+            color:#000;
+        }
+        header {
+            position: absolute;
+            top:10px;
+            width:100%;
+        }
+        header .login{
+            float:right;
+            margin-right:20px;
+            font-size: 28px;
+            color:#000;
+        }
+        main {
+            height:100%;
+            background:linear-gradient(to right ,rgba(211,211,211,0.1),rgba(169,169,169,0.1)),url(img/1.jpg) center center no-repeat;
+        }
+        .filp-modal {
+           /* display: none; */
+        }
+        .modal {
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%) ;
+            background:rgba(255, 255, 255,0.5);
+            width:400px;
+            height:300px;
+            padding:16px;
+            box-shadow: 2px 2px 4px #1b4261;
+        }
+        .modal .close {
+            position: absolute;
+            top:5px;
+            right:10px;
+            font-size: 18px;
+        }
+        .modal .tabs {
+            text-align: center;
+            font-size: 16px;
+        }
+        .tabs a {
+            display: inline-block;
+            margin:0 15px;
+        }
+        .tabs a.active {
+            border-bottom:2px solid ;
+        }
+        .modal .content {
+            padding:20px 40px;
+        }
+        .modal .errorMes {
+            color:red;
+            font-size: 12px;
+        }
+        .content .input-field {
+            margin-top:15px;
+            position: relative;
+        }
+        .content input[type=text],
+        .content input[type=password]{
+            height:36px;
+            width:100%;
+            padding:0px 25px;
+            outline:none;
+        }
+        .input-field .fa {
+            position: absolute;
+            left:8px;
+            top:11px;
+        }
+        .content input[type=submit]{
+            /* 解决input type="button" 不能设置高度的问题 */
+            appearance:button;
+            -moz-appearance:button; /* Firefox */
+            -webkit-appearance:button; /* Safari 和 Chrome */
+            width:50px;
+            height:30px;
+            cursor: pointer;
+            border:none;
+            outline: none;
+            box-shadow: 0px 0px 2px rgba(0,0,0,0.4);
+        }
+       
+
+    
+    </style>
+</head>
+<body>
+   <header>
+       <a href="#" class="login"> <i class="fa fa-user-circle"></i></a>
+   </header>
+   <main>
+       <div class="filp-modal">
+           <!-- 登录页面开始 -->
+            <div class="modal modal-login">
+                <a href="#" class="close fa fa-close"></a>
+                <div class="tabs">
+                    <a href="#" class="login active">登录</a>
+                    <a href="#" class="register">注册</a>
+                </div>
+                <div class="content">
+                    <div class="errorMes"></div>
+                    <div class="input-field">
+                        <i class="fa fa-user-o"></i><input type="text" placeholder="用户名">
+                    </div>
+                    <div class="input-field">
+                        <i class="fa fa-lock"></i><input type="password" placeholder="密码">
+                    </div>
+                    <div class="input-field">
+                        <input type="submit" value="登录" class="loginBtn">
+                    </div>
+                </div>
+            </div>
+            <!-- 登录页面结束 -->
+
+            <!-- 注册页面开始 -->
+           <div class="modal modal-register">
+                <a href="#" class="close fa fa-close"></a>
+                <div class="tabs">
+                    <a href="#" class="login">登录</a>
+                    <a href="#" class="register active">注册</a>
+                </div>
+                <div class="content">
+                    <div class="errorMes"></div>
+                    <div class="input-field">
+                        <i class="fa fa-user-o"></i><input type="text" placeholder="请输入用户名">
+                    </div>
+                    <div class="input-field">
+                        <i class="fa fa-lock"></i><input type="password" placeholder="请输入密码">
+                    </div>
+                    <div class="input-field">
+                        <i class="fa fa-lock"></i><input type="password" placeholder="请再次输入密码">
+                    </div>
+                    <div class="input-field">
+                        <input type="submit" value="注册" class="loginBtn">
+                    </div>
+                </div>
+            </div> 
+           <!-- 注册页面结束 -->
+       </div>
+   </main>
+   <script>
+       
+    
+       
+   
+   
+   </script>
+</body>
+</html>
